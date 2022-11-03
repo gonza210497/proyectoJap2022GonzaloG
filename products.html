@@ -25,7 +25,7 @@
             <a class="nav-link" href="inicio.html">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="categories.html">Categorías</a>
+            <a class="nav-link" href="categories.html">Categorías</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
@@ -33,13 +33,13 @@
           <div id="navbarNavDarkDropdown">
             <ul class="navbar-nav">
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="profile" role="button"
-                  data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" id="profile" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
                   Dropdown
                 </a>
                 <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
                   <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
-                  <li><a class="dropdown-item" href="my-profile.html" >Mi perfil</a></li>
+                  <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
                   <li><a class="dropdown-item" href="index.html">Cerrar sesión</a></li>
                 </ul>
               </li>
@@ -49,21 +49,22 @@
       </div>
     </div>
   </nav>
-  <main class="pb-5">
+  <main class="pb-5 container">
     <div class="text-center p-4">
-      <h2>Categorías</h2>
-      <p class="lead">Verás aquí todas las categorías del sitio.</p>
+      <h2>Productos</h2>
+      <p class="lead">Veras aqui todos los productos de la categoria Autos</p>
+      <hr class="mb-4">
     </div>
     <div class="container">
       <div class="row">
         <div class="col text-end">
           <div class="btn-group btn-group-toggle mb-4" data-bs-toggle="buttons">
-            <input type="radio" class="btn-check" name="options" id="sortAsc">
-            <label class="btn btn-light" for="sortAsc">A-Z</label>
-            <input type="radio" class="btn-check" name="options" id="sortDesc">
-            <label class="btn btn-light" for="sortDesc">Z-A</label>
-            <input type="radio" class="btn-check" name="options" id="sortByCount" checked>
-            <label class="btn btn-light" for="sortByCount"><i class="fas fa-sort-amount-down mr-1"></i></label>
+            <input type="radio" class="btn-check" name="options" id="precioAsce">
+            <label class="btn btn-light" for="precioAsce">-$+</label>
+            <input type="radio" class="btn-check" name="options" id="precioDesc">
+            <label class="btn btn-light" for="precioDesc">+$-</label>
+            <input type="radio" class="btn-check" name="options" id="porRelevancia">
+            <label class="btn btn-light" for="porRelevancia"><i class="fas fa-sort-amount-down mr-1"></i></label>
           </div>
         </div>
       </div>
@@ -74,26 +75,28 @@
               <p class="font-weight-normal text-end my-2">Cant.</p>
             </div>
             <div class="col">
-              <input class="form-control" type="number" placeholder="min." id="rangeFilterCountMin">
+              <input class="form-control" type="number" placeholder="min." id="rango-min">
             </div>
             <div class="col">
-              <input class="form-control" type="number" placeholder="máx." id="rangeFilterCountMax">
+              <input class="form-control" type="number" placeholder="máx." id="rango-max">
             </div>
             <div class="col-3 p-0">
               <div class="btn-group" role="group">
-                <button class="btn btn-light btn-block" id="rangeFilterCount">Filtrar</button>
-                <button class="btn btn-link btn-sm" id="clearRangeFilter">Limpiar</button>
+                <button class="btn btn-light btn-block" id="filtrar">Filtrar</button>
+                <button class="btn btn-link btn-sm" id="limpiar">Limpiar</button>
               </div>
             </div>
           </div>
         </div>
       </div>
+      <hr class="mb-4">
       <div class="row">
-        <div class="list-group" id="cat-list-container">
+        <div class="list-group" id="contenedores">
         </div>
       </div>
     </div>
   </main>
+
   <footer class="text-muted">
     <div class="container">
       <p class="float-end">
@@ -114,7 +117,7 @@
   </div>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
-  <script src="js/categories.js"></script>
+  <script src="js/products.js"></script>
 </body>
 
 </html>

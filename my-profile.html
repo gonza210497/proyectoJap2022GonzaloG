@@ -45,17 +45,53 @@
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" hfer="my-profile.html" id="profile"></a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
   <main>
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+    <div>
+      <h1>Perfil</h1>
+      <hr class="mb-4">
+      <div class="col-xs-12 col-md-3 input-group input-group-sm">
+        <div class="input-group-addon">
+          <label for="primerNombre" class="form-label">Primer nombre*</label>
+          <input type="text" id="primerNombre" class="form-control input-car" required>
+          <div class="invalid-feedback">
+            Ingrese un nombre
+          </div>
+        </div>
+        <div class="input-group-addon">
+          <label for="segundoNombre" class="form-label">Segundo nombre</label>
+          <input type="text" id="segundoNombre" class="form-control input-car">
+        </div>
+        <div class="input-group-addon">
+          <label for="primerApellido" class="form-label">Primer apellido*</label>
+          <input type="text" id="primerApellido" class="form-control input-car" required>
+          <div class="invalid-feedback">
+            Ingrese primer apellido
+          </div>
+        </div>
+        <div class="input-group-addon">
+          <label for="segundoApellido" class="form-label">Segundo apellido</label>
+          <input type="text" id="segundoApellido" class="form-control input-car">
+        </div>
+        <div class="input-group-addon">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" id="esquina" class="form-control input-car" required>
+          <div class="invalid-feedback">
+            Ingrese un @Email
+          </div>
+        </div>
+        <div class="input-group-addon">
+          <label for="contacto" class="form-label">Numero de contacto</label>
+          <input type="text" id="contacto" class="form-control input-car">
+        </div>
       </div>
     </div>
+    <button id="guardarCambios" class="btn btn-primary btn-lg">Guardar cambios</button>
   </main>
   <footer class="text-muted">
     <div class="container">

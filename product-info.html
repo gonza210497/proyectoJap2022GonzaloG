@@ -10,6 +10,8 @@
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -22,10 +24,10 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav w-100 justify-content-between">
           <li class="nav-item">
-            <a class="nav-link" href="inicio.html">Inicio</a>
+            <a class="nav-link" href="index.html">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="categories.html">Categorías</a>
+            <a class="nav-link" href="categories.html">Categorías</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
@@ -48,51 +50,43 @@
         </ul>
       </div>
     </div>
-  </nav>
-  <main class="pb-5">
-    <div class="text-center p-4">
-      <h2>Categorías</h2>
-      <p class="lead">Verás aquí todas las categorías del sitio.</p>
+  </nav> 
+  <main class="pb-5 container">
+    <div>
+      <p>
+      <ul id="informacionId"></ul>
+      </p>
     </div>
-    <div class="container">
-      <div class="row">
-        <div class="col text-end">
-          <div class="btn-group btn-group-toggle mb-4" data-bs-toggle="buttons">
-            <input type="radio" class="btn-check" name="options" id="sortAsc">
-            <label class="btn btn-light" for="sortAsc">A-Z</label>
-            <input type="radio" class="btn-check" name="options" id="sortDesc">
-            <label class="btn btn-light" for="sortDesc">Z-A</label>
-            <input type="radio" class="btn-check" name="options" id="sortByCount" checked>
-            <label class="btn btn-light" for="sortByCount"><i class="fas fa-sort-amount-down mr-1"></i></label>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-6 offset-lg-6 col-md-12 mb-1 container">
-          <div class="row container p-0 m-0">
-            <div class="col">
-              <p class="font-weight-normal text-end my-2">Cant.</p>
-            </div>
-            <div class="col">
-              <input class="form-control" type="number" placeholder="min." id="rangeFilterCountMin">
-            </div>
-            <div class="col">
-              <input class="form-control" type="number" placeholder="máx." id="rangeFilterCountMax">
-            </div>
-            <div class="col-3 p-0">
-              <div class="btn-group" role="group">
-                <button class="btn btn-light btn-block" id="rangeFilterCount">Filtrar</button>
-                <button class="btn btn-link btn-sm" id="clearRangeFilter">Limpiar</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="list-group" id="cat-list-container">
-        </div>
-      </div>
+    <div id="coment">
+      <h2>Comentarios:</h2>
+      <p>
+      <ul id="comentarios"></ul>
+      </p>
+      <div id="estrellitas"></div>
     </div>
+    <div id="nuevoComentario">
+      <h2>Comentar</h2>
+      <p>Tu opinion:</p>
+      <label for="textoComentario" class="form-label"></label>
+      <textarea class="form-control" id="coment" rows="3"></textarea>
+      <h3>Tu puntuacion</h3>
+      <select name="estrellas" id="puntuacion">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+      <br>
+      <button type="button" class="btn btn-primary btn-lg" id="enviar">Enviar</button>
+    </div>
+    <div id="productosRelacionados">
+      <h2>Productos relacionados</h2>
+      <ul id="relacionados1"></ul>
+      <ul id="relacionados2"></ul>
+    </div>
+
+
   </main>
   <footer class="text-muted">
     <div class="container">
@@ -114,7 +108,7 @@
   </div>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
-  <script src="js/categories.js"></script>
+  <script src="js/product-info.js"></script>
 </body>
 
 </html>

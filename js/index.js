@@ -1,14 +1,24 @@
-document.addEventListener("DOMContentLoaded", function(){
-    document.getElementById("autos").addEventListener("click", function() {
-        localStorage.setItem("catID", 101);
-        window.location = "products.html"
-    });
-    document.getElementById("juguetes").addEventListener("click", function() {
-        localStorage.setItem("catID", 102);
-        window.location = "products.html"
-    });
-    document.getElementById("muebles").addEventListener("click", function() {
-        localStorage.setItem("catID", 103);
-        window.location = "products.html"
-    });
-});
+document.getElementById("ingresar").addEventListener("click", function(){
+    let email = document.getElementById("email").value ;
+    let contraseña = document.getElementById("password").value ;
+    let seCumple = true;
+
+    if (email == "") {
+        seCumple = false
+        alert("Falta el email")       
+    }
+
+    if (contraseña == "") {
+        seCumple = false
+        alert("Falta la contraseña")       
+    }
+
+    if (seCumple) {
+        window.location.href = "inicio.html"
+        let perfile = localStorage.setItem("perfil", email)
+    }
+    
+})
+
+
+//console.log(email)

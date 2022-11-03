@@ -29,18 +29,143 @@
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
-          <li class="nav-item">
-          </li>
+          <div id="navbarNavDarkDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="profile" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                  <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
+                  <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+                  <li><a class="dropdown-item" href="index.html">Cerrar sesión</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
         </ul>
       </div>
     </div>
   </nav>
   <main>
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+    <form id="comprar" class="row mt-4 needs-validation" novalidate>
+      <h1>Carrito de compras</h1>
+      <h2>Articulos a comprar</h2>
+      <hr class="mb-4">
+      <table class="table table-bordered border-primary ">
+        <tr>
+          <td></td>
+          <td>Nombre</td>
+          <td></td>
+          <td>Costo</td>
+          <td>Cantidad</td>
+          <td>Subtotal</td>
+        </tr>
+        <tr id="productoCarr"></tr>
+      </table>
+      <div id="costEnvio">
+        <hr class="mb-4">
+        <h2>Tipo de envío</h2>
+        <div class="custom-control custom-radio">
+          <input id="premium" name="porsentajes" type="radio" class="custom-control-input" required="" checked>
+          <label class="custom-control-label" for="premium">Premium 2 a 5 dias (25%)</label>
+        </div>
+        <br>
+        <div class="custom-control custom-radio">
+          <input id="express" name="porsentajes" type="radio" class="custom-control-input" required="">
+          <label class="custom-control-label" for="express">Express 5 a 8 dias (7%)</label>
+        </div>
+        <br>
+        <div class="custom-control custom-radio">
+          <input id="standard" name="porsentajes" type="radio" class="custom-control-input" required="">
+          <label class="custom-control-label" for="standard">Standard 12 a 15 dias (5%)</label>
+        </div>
+        <br>
+        <br>
       </div>
-    </div>
+      <div>
+        <hr class="mb-4">
+        <h2>Direccion de envio</h2>
+        <div class="col-xs-12 col-md-3 input-group input-group-sm">
+          <div class="input-group-addon">
+            <label for="calle" class="form-label">Calle</label>
+            <input type="text" class="form-control input-car" id="calle" value="" name="calle" required>
+            <div class="invalid-feedback">
+              Ingrese una calle
+            </div>
+          </div>
+          <div class="input-group-addon">
+            <label for="numero" class="form-label">Numero</label>
+            <input type="text" id="numero" class="form-control input-car" required>
+          </div>
+          <div class="invalid-feedback">
+            Ingrese un numero
+          </div>
+        </div>
+        <br>
+        <div class="input-group-addon">
+          <label for="esquina" class="form-label">Esquina</label>
+          <input type="text" id="esquina" class="form-control input-car" required>
+          <div class="invalid-feedback">
+            Ingrese una esquina
+          </div>
+        </div>
+      </div>
+      <div id="costos"></div>
+      <div>
+        <hr class="mb-4">
+        <h2>Forma de pago</h2>
+        <p id="mostrarSeleccion" aria-required="true"></p><button id="abrirModal" target="_blank" class="btn btn-primary " >Seleccionar</button>
+        <br>
+        <br>
+        <div id="ventanaModal" class="modal">
+          <div class="contenido-modal">
+            <span class="close">&times;</span>
+            <h2>Forma de pago</h2>
+            <br>
+            <div class="custom-control custom-radio">
+              <input id="conTarjeta" name="formaDePago" type="radio" class="custom-control-input" required="">
+              <label class="custom-control-label" for="conTarjeta">Tarjeta de credito</label>
+            </div>
+            <hr class="mb-4">
+            <div id="tarjeta">
+              <div class="input-group-addon">
+                <label for="nmroTarjeta" class="form-label">Numero de tarjeta</label>
+                <input type="text" id="nmroTarjeta" class="form-control input-car" maxlength="15" required>
+                <div class="invalid-feedback">
+                  Ingrese una tarjeta
+                </div>
+              </div>
+              <div class="input-group-addon">
+                <label for="codigoSeg" class="form-label">Codigo de seg.</label>
+                <input type="text" id="codigoSeg" class="form-control input-car" maxlength="3" required>
+                <div class="invalid-feedback">
+                  Ingrese su codigo de seguridad
+                </div>
+              </div>
+              <div class="input-group-addon">
+                <label for="vencimiento" class="form-label">Vencimiento (MM/AA)</label>
+                <input type="text" id="vencimiento" class="form-control input-car" required>
+                <div class="invalid-feedback">
+                  Ingrese el vencimiento
+                </div>
+              </div>
+            </div>
+            <hr class="mb-4">
+            <div class="custom-control custom-radio">
+              <input id="transferencia" name="formaDePago" type="radio" class="custom-control-input" required="">
+              <label class="custom-control-label" for="transferencia">Transferencia bancaria</label>
+              <div class="input-group-addon">
+                <label for="nmroCuenta" class="form-label">Numero de tarjeta</label>
+                <input type="text" id="nmroCuenta" class="form-control input-car" maxlength="15" required>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr class="mb-4">
+        <button class="btn btn-primary btn-lg" type="submit">Finalizar compra</button>
+    </form>
   </main>
   <footer class="text-muted">
     <div class="container">
