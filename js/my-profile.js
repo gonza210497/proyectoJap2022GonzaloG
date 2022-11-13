@@ -19,37 +19,35 @@ document.addEventListener("DOMContentLoaded", function (e) {
         primerApellido.classList.remove('is-invalid');
         email.classList.remove('is-invalid');
 
-        if (primerNombre.value === "") {
+        if (primerNombre === "") {
             primerNombre.classList.add('is-invalid');
             paso = false;
-        }else {
-
+        } else {
             primerNombre.classList.add('is-valid')
-        }
-        if (segundoNombre.value === ""){
-
-        }else{}
-
+        }        
         if (primerApellido.value === "") {
             primerApellido.classList.add('is-invalid');
             paso = false;
-        }else {
+        } else {
             primerApellido.classList.add('is-valid');
-        }
-        if (segundoApellido.value === ""){
-
-        }else {}
-
+        }        
         if (email.value === "") {
             email.classList.add('is-invalid');
             paso = false;
-        }else {
+        } else {
             email.classList.add('is-valid');
         }
-        if (contacto.value === ""){
+        // modificar datos en el local storage 
 
-        }else{}
-
-        
+        let local = localStorage.getItem("usuario")
+        let modificarlocal = JSON.parse(local)
+        modificarlocal.nombre1 = primerNombre.value
+        modificarlocal.nombre2 = segundoNombre.value
+        modificarlocal.apellido1 = primerApellido.value
+        modificarlocal.apellido2 = segundoApellido.value
+        modificarlocal.email1 = email.value
+        modificarlocal.contacto1 = contacto.value
+        let localModificado = JSON.stringify(modificarlocal)
+        localStorage.setItem("usuario", localModificado)
     })
 })
