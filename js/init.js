@@ -44,7 +44,6 @@ let getJSONData = function(url){
 let informacion = localStorage.getItem("usuario")
 let parseado = JSON.parse(informacion)
 let mostrarEnPerfil = parseado.email1
-
 document.getElementById("profile").innerHTML = mostrarEnPerfil
 
 //let informacionProduct = localStorage.getItem("redirigir")

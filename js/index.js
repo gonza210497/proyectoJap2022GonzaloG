@@ -24,6 +24,7 @@ document.getElementById("ingresar").addEventListener("click", function () {
             contacto1: "",
         }
         localStorage.setItem("usuario", JSON.stringify(usuario))
+        
     }
 
 })
